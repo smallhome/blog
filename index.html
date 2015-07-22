@@ -20,60 +20,59 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/test-blog.html">My super title</a></h1>
+                    <h1 class="entry-title"><a href="/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2010-12-03T00:00:00+08:00">
-                Published: Fri 03 December 2010
+        <abbr class="published" title="2015-07-22T00:00:00+08:00">
+                Published: Wed 22 July 2015
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/wxh.html">wxh</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/tag1.html">tag1</a> <a href="/tag/tag2.html">tag2</a> </p>
-</footer><!-- /.post-info --><p><img alt="mahua" src="mahua-logo.jpg" /></p>
-<h2>MaHua是什么?</h2>
-<p>一个在线编辑markdown文档的编辑器</p>
-<p>向Mac下优秀的markdown编辑器mou致敬</p>
-<h2>MaHua有哪些功能？</h2>
+<p>tags: <a href="/tag/gong-ju.html">工具</a> </p>
+</footer><!-- /.post-info --><h2>Github帐户相关</h2>
 <ul>
-<li>方便的<code>导入导出</code>功能<ul>
-<li>直接把一个markdown的文本文件拖放到当前这个页面就可以了</li>
-<li>导出为一个html格式的文件，样式一点也不会丢失</li>
+<li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
+<li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
+<li>git config设置git用户,邮箱等信息</li>
+<li>如果git push依然不成功,可以使用http协议来clone代码和提交内容</li>
+<li>新建repositories,自动新建github pages,新建一个source branch,用来存储md文件</li>
 </ul>
+<h2>建立gentoo环境</h2>
+<ul>
+<li>emerge git,pelican,extext工具,解决依赖关系</li>
+<li>pelican-quickstart建立基本博客环境<blockquote>
+<p>myblog</p>
+</blockquote>
 </li>
-<li>编辑和预览<code>同步滚动</code>，所见即所得（右上角设置）</li>
-<li><code>VIM快捷键</code>支持，方便vim党们快速的操作 （右上角设置）</li>
-<li>强大的<code>自定义CSS</code>功能，方便定制自己的展示</li>
-<li>有数量也有质量的<code>主题</code>,编辑器和预览区域</li>
-<li>完美兼容<code>Github</code>的markdown语法</li>
-<li>预览区域<code>代码高亮</code></li>
-<li>所有选项自动记忆</li>
 </ul>
-<h2>有问题反馈</h2>
-<p>在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流</p>
+<blockquote>
+<p>├── content # 存放输入的源文件</p>
+<p>│ └── (pages) # 存放手工创建的静态页面</p>
+<p>├── output # 生成的输出文件</p>
+<p>├── develop_server.sh # 方便开启测试服务器</p>
+<p>├── Makefile # 方便管理博客的Makefile</p>
+<p>├── pelicanconf.py # 主配置文件</p>
+<p>└── publishconf.py # 发布时使用的配置文件</p>
+</blockquote>
 <ul>
-<li>邮件(dev.hubo#gmail.com, 把#换成@)</li>
-<li>QQ: 287759234</li>
-<li>weibo: <a href="http://weibo.com/ihubo">@草依山</a></li>
-<li>twitter: <a href="http://twitter.com/ihubo">@ihubo</a></li>
+<li>使用extext写好的md文档放入content目录,执行make html</li>
+<li>make devserver执行成功后可以在http://localhost:8000查看博客</li>
+<li>./develop_server.sh stop停止浏览功能</li>
 </ul>
-<h2>捐助开发者</h2>
-<p>在兴趣的驱动下,写一个<code>免费</code>的东西，有欣喜，也还有汗水，希望你喜欢我的作品，同时也能支持一下。
-当然，有钱捧个钱场（右上角的爱心标志，支持支付宝和PayPal捐助），没钱捧个人场，谢谢各位。</p>
-<h2>感激</h2>
-<p>感谢以下的项目,排名不分先后</p>
+<h2>提交静态网页</h2>
 <ul>
-<li><a href="http://mouapp.com/">mou</a> </li>
-<li><a href="http://ace.ajax.org/">ace</a></li>
-<li><a href="http://jquery.com">jquery</a></li>
+<li>git clone在github上的代码,git rm . -rf</li>
+<li>将pelican产生的output目录下的内容mv到git目录下</li>
+<li>git add .;git commit -am "first commit";git push</li>
+<li>在github中将main分之切换成source分之,将除了output之外的其他内容cp到该git目录下并提交</li>
 </ul>
-<h2>关于作者</h2>
-<div class="highlight"><pre>  <span class="kd">var</span> <span class="nx">ihubo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">nickName</span>  <span class="o">:</span> <span class="s2">&quot;草依山&quot;</span><span class="p">,</span>
-    <span class="nx">site</span> <span class="o">:</span> <span class="s2">&quot;http://jser.me&quot;</span>
-  <span class="p">}</span>
-</pre></div>                </article>
+<h2>问题反馈之联系方式</h2>
+<ul>
+<li>邮件(wangxiaohua1990@hotmail.com)</li>
+<li>weibo: http://wangxiaohua1990.github.io/wxh.github.com/</li>
+</ul>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
