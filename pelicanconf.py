@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'wxh'
-SITENAME = u'IT BLOG'
-SITEURL = 'http://wangxiaohua1990.github.io/wxh.github.com/'
+SITENAME = u'wxh blog'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -29,7 +29,8 @@ AUTHOR_FEED_RSS = None
 #SOCIAL = (('You can add links in your config file', '#'),
 #          ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+THEME = "/home/wxh/github/pelican-themes/pelican-bootstrap3"
