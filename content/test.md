@@ -1,51 +1,47 @@
-Date: 2010-12-03
-Title: My super title
-Slug: test-blog
-Tags: tag1, tag2
+Date: 2015-07-22
+Title: 如何搭建github博客
+Tags: 工具
 
-![mahua](mahua-logo.jpg)
-##MaHua是什么?
-一个在线编辑markdown文档的编辑器
+##Github帐户相关
+* 一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件
+* git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可
+* git config设置git用户,邮箱等信息
+* 如果git push依然不成功,可以使用http协议来clone代码和提交内容
+* 新建repositories,自动新建github pages,新建一个source branch,用来存储md文件
 
-向Mac下优秀的markdown编辑器mou致敬
 
-##MaHua有哪些功能？
+##建立gentoo环境
 
-* 方便的`导入导出`功能
-    *  直接把一个markdown的文本文件拖放到当前这个页面就可以了
-    *  导出为一个html格式的文件，样式一点也不会丢失
-* 编辑和预览`同步滚动`，所见即所得（右上角设置）
-* `VIM快捷键`支持，方便vim党们快速的操作 （右上角设置）
-* 强大的`自定义CSS`功能，方便定制自己的展示
-* 有数量也有质量的`主题`,编辑器和预览区域
-* 完美兼容`Github`的markdown语法
-* 预览区域`代码高亮`
-* 所有选项自动记忆
+* emerge git,pelican,extext工具,解决依赖关系
+* pelican-quickstart建立基本博客环境
+>myblog
 
-##有问题反馈
-在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
+>├── content # 存放输入的源文件
 
-* 邮件(dev.hubo#gmail.com, 把#换成@)
-* QQ: 287759234
-* weibo: [@草依山](http://weibo.com/ihubo)
-* twitter: [@ihubo](http://twitter.com/ihubo)
+>│ └── (pages) # 存放手工创建的静态页面
 
-##捐助开发者
-在兴趣的驱动下,写一个`免费`的东西，有欣喜，也还有汗水，希望你喜欢我的作品，同时也能支持一下。
-当然，有钱捧个钱场（右上角的爱心标志，支持支付宝和PayPal捐助），没钱捧个人场，谢谢各位。
+>├── output # 生成的输出文件
 
-##感激
-感谢以下的项目,排名不分先后
+>├── develop_server.sh # 方便开启测试服务器
 
-* [mou](http://mouapp.com/) 
-* [ace](http://ace.ajax.org/)
-* [jquery](http://jquery.com)
+>├── Makefile # 方便管理博客的Makefile
 
-##关于作者
+>├── pelicanconf.py # 主配置文件
 
-```javascript
-  var ihubo = {
-    nickName  : "草依山",
-    site : "http://jser.me"
-  }
-```
+>└── publishconf.py # 发布时使用的配置文件
+
+* 使用extext写好的md文档放入content目录,执行make html
+* make devserver执行成功后可以在http://localhost:8000查看博客
+* ./develop_server.sh stop停止浏览功能
+
+
+##提交静态网页
+* git clone在github上的代码,git rm . -rf
+* 将pelican产生的output目录下的内容mv到git目录下
+* git add .;git commit -am "first commit";git push
+* 在github中将main分之切换成source分之,将除了output之外的其他内容cp到该git目录下并提交
+
+
+##问题反馈之联系方式
+* 邮件(wangxiaohua1990@hotmail.com)
+* weibo: http://wangxiaohua1990.github.io/wxh.github.com/
