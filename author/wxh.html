@@ -1,37 +1,71 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="cn"
+>
 <head>
-        <meta charset="utf-8" />
-        <title>IT BLOG - wxh</title>
-        <link rel="stylesheet" href="http://wangxiaohua1990.github.io/wxh.github.com/theme/css/main.css" />
+    <title>Articles by wxh - wxh blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+
+        <meta name="author" content="wxh" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="wxh blog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="wxh blog"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="wxh blog"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
 </head>
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://wangxiaohua1990.github.io/wxh.github.com/">IT BLOG </a></h1>
-                <nav><ul>
-                    <li><a href="http://wangxiaohua1990.github.io/wxh.github.com/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+wxh blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://wangxiaohua1990.github.io/wxh.github.com/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2015-07-22T00:00:00+08:00">
-                Published: Wed 22 July 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://wangxiaohua1990.github.io/wxh.github.com/author/wxh.html">wxh</a>
-        </address>
-<p>In <a href="http://wangxiaohua1990.github.io/wxh.github.com/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://wangxiaohua1990.github.io/wxh.github.com/tag/gong-ju.html">工具</a> </p>
-</footer><!-- /.post-info --><h2>Github帐户相关</h2>
+            <article>
+                <h2><a href="/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h2>
+                <div class="summary"><h2>Github帐户相关</h2>
 <ul>
 <li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
 <li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
@@ -57,33 +91,51 @@
 <p>└── publishconf.py # 发布时使用的配置文件</p>
 </blockquote>
 <ul>
-<li>使用extext写好的md文档放入content目录,执行make html</li>
-<li>make devserver执行成功后可以在http://localhost:8000查看博客</li>
-<li>./develop_server.sh stop停止浏览功能</li>
-</ul>
-<h2>提交静态网页</h2>
-<ul>
-<li>git clone在github上的代码,git rm . -rf</li>
-<li>将pelican产生的output目录下的内容mv到git目录下</li>
-<li>git add .;git commit -am "first commit";git push</li>
-<li>在github中将main分之切换成source分之,将除了output之外的其他内容cp到该git目录下并提交</li>
-</ul>
-<h2>问题反馈之联系方式</h2>
-<ul>
-<li>邮件(wangxiaohua1990@hotmail.com)</li>
-<li>weibo: http://wangxiaohua1990.github.io/wxh.github.com/</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
+<li>使用extext写好的md文档放入content目录,执行make ...</li></ul>
+                    <a class="btn btn-default btn-xs" href="/ru-he-da-jian-githubbo-ke.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 wxh
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
 
 </body>
 </html>

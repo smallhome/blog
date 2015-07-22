@@ -1,42 +1,102 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="cn"
+>
 <head>
-        <meta charset="utf-8" />
-        <title>如何搭建github博客</title>
-        <link rel="stylesheet" href="http://wangxiaohua1990.github.io/wxh.github.com/theme/css/main.css" />
+    <title>如何搭建github博客 - wxh blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+<link rel="canonical" href="/ru-he-da-jian-githubbo-ke.html">
+
+        <meta name="author" content="wxh" />
+        <meta name="keywords" content="工具" />
+        <meta name="description" content="Github帐户相关 一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件 git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可 git config设置git用户,邮箱等信息 如果git push依然不成功,可以使用http协议来clone代码和提交内容 新建repositories,自动新建github pages,新建一个source branch,用来存储md文件 建立gentoo环境 emerge git,pelican,extext工具,解决依赖关系 pelican-quickstart建立基本博客环境 myblog ├── content # 存放输入的源文件 │ └── (pages) # 存放手工创建的静态页面 ├── output # 生成的输出文件 ├── develop_server.sh # 方便开启测试服务器 ├── Makefile # 方便管理博客的Makefile ├── pelicanconf.py # 主配置文件 └── publishconf.py # 发布时使用的配置文件 使用extext写好的md文档放入content目录,执行make ..." />
+
+        <meta property="og:site_name" content="wxh blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="如何搭建github博客"/>
+        <meta property="og:url" content="/ru-he-da-jian-githubbo-ke.html"/>
+        <meta property="og:description" content="Github帐户相关 一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件 git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可 git config设置git用户,邮箱等信息 如果git push依然不成功,可以使用http协议来clone代码和提交内容 新建repositories,自动新建github pages,新建一个source branch,用来存储md文件 建立gentoo环境 emerge git,pelican,extext工具,解决依赖关系 pelican-quickstart建立基本博客环境 myblog ├── content # 存放输入的源文件 │ └── (pages) # 存放手工创建的静态页面 ├── output # 生成的输出文件 ├── develop_server.sh # 方便开启测试服务器 ├── Makefile # 方便管理博客的Makefile ├── pelicanconf.py # 主配置文件 └── publishconf.py # 发布时使用的配置文件 使用extext写好的md文档放入content目录,执行make ..."/>
+        <meta property="article:published_time" content="2015-07-22" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="工具" />
+            <meta property="article:author" content="wxh" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
 </head>
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://wangxiaohua1990.github.io/wxh.github.com/">IT BLOG </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="http://wangxiaohua1990.github.io/wxh.github.com/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="http://wangxiaohua1990.github.io/wxh.github.com/ru-he-da-jian-githubbo-ke.html" rel="bookmark"
-           title="Permalink to 如何搭建github博客">如何搭建github博客</a></h1>
-    </header>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+wxh blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
 
-    <div class="entry-content">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/ru-he-da-jian-githubbo-ke.html"
+                       rel="bookmark"
+                       title="Permalink to 如何搭建github博客">
+                        如何搭建github博客
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
-        <abbr class="published" title="2015-07-22T00:00:00+08:00">
-                Published: Wed 22 July 2015
-        </abbr>
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-22T00:00:00+08:00"> Wed 22 July 2015</time>
+    </span>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://wangxiaohua1990.github.io/wxh.github.com/author/wxh.html">wxh</a>
-        </address>
-<p>In <a href="http://wangxiaohua1990.github.io/wxh.github.com/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://wangxiaohua1990.github.io/wxh.github.com/tag/gong-ju.html">工具</a> </p>
-</footer><!-- /.post-info -->      <h2>Github帐户相关</h2>
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/gong-ju.html">工具</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Github帐户相关</h2>
 <ul>
 <li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
 <li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
@@ -78,20 +138,50 @@
 <li>邮件(wangxiaohua1990@hotmail.com)</li>
 <li>weibo: http://wangxiaohua1990.github.io/wxh.github.com/</li>
 </ul>
-    </div><!-- /.entry-content -->
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
-  </article>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    </ul>
 </section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 wxh
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
 
 </body>
 </html>
