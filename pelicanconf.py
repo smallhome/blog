@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'wxh'
 SITENAME = u'wxh blog'
-SITEURL = ''
+SITEURL = 'http://wangxiaohua1990.github.io/wxh.github.com/'
 
 PATH = 'content'
 
@@ -33,4 +33,4 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-THEME = "/home/wxh/github/pelican-themes/bootstrap2"
+THEME = "new-bootstrap2"
