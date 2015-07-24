@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'wxh'
-SITENAME = u'wxh blog'
-SITEURL = 'http://wangxiaohua1990.github.io/blog/'
+SITENAME = u'small home'
+SITEURL = 'http://smallhome.github.io/blog/'
 
 PATH = 'content'
 
@@ -33,4 +33,4 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-THEME = "new-bootstrap2"
+THEME = "bootstrap2-dark"

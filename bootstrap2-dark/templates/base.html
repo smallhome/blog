@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>{% block title %}Blog about Me and my Linux{% endblock %} | {{ SITENAME }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="{{ KEYWORDS }}" />
-    <meta name="author" content="{{ AUTHOR }}" />
-    <meta name="kittycheck_rumble" content="true" />
-    <meta name="kittycheck_position" content="top=60,right=60" />
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.dark.css" type="text/css" />
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -32,8 +30,9 @@
         font-size: 6pt;
      }
     </style>
-    <link href="{{ SITEURL }}/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/css/font-awesome.css" rel="stylesheet">
+
     <link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -42,18 +41,20 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/favicon.ico">
-    <link rel="apple-touch-icon" href="{{ SITEURL }}/theme/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ SITEURL }}/theme/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ SITEURL }}/theme/img/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ SITEURL }}/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ SITEURL }}/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ SITEURL }}/theme/images/apple-touch-icon-114x114.png">
 
     <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
     {% if FEED_RSS %}
     <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
+
   </head>
+
   <body>
-    {% include 'github.html' %}
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -69,21 +70,22 @@
                   <li><a href="{{ link }}">{{ title }}</a></li>
               {% endfor %}
               {% if DISPLAY_PAGES_ON_MENU %}
-              {% for gpage in PAGES %}
-                <li {% if page == gpage %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ gpage.url }}">{{ gpage.title }}</a></li>
+              {% for page in PAGES %}
+                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
               {% endfor %}
-                <li class="divider-vertical"></li>
+                          <li class="divider-vertical"></li>
               {% endif %}
               {% for cat, null in categories %}
-                <li {% if cat == category %}class="active"{% endif %}>
-                  <a href="{{ SITEURL }}/{{ cat.url }}">
-						        <i class="icon-folder-open icon-large"></i>{{ cat }}
-					         </a>
-                </li>
+                  <li {% if cat == category %}class="active"{% endif %}>
+                    <a href="{{ SITEURL }}/{{ cat.url }}">
+						<i class="icon-folder-open icon-large"></i>{{ cat }}
+					</a>
+                  </li>
               {% endfor %}
-              <ul class="nav pull-right">
-                    <li><a href="{{ SITEURL }}/archives.html"><i class="icon-th-list"></i>Archives</a></li>
-              </ul>
+
+                          <ul class="nav pull-right">
+                                <li><a href="{{ SITEURL }}/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
 
             </ul>
             <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
@@ -92,13 +94,14 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="span8" id="content">
+        <div class="span9" id="content">
             {% block content %}
             {% endblock %}
         </div><!--/span-->
-        <div class="span3 well sidebar-nav" id="sidebar">
+
+                <div class="span3 well sidebar-nav" id="sidebar">
             {% include 'sidebar.html' %}
         </div><!--/.well -->
 
@@ -106,13 +109,22 @@
 
       <hr>
 
-      {% include 'footer.html' %}
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
     </div><!--/.fluid-container-->
 
+
     {% include 'analytics.html' %}
-    {% include 'metryka.html' %}
     {% include 'piwik.html' %}
-    {#% include 'disqus_script.html' %#}
+    {% include 'disqus_script.html' %}
 
     <!-- Le javascript -->
     <!-- Placed at the end of the document so the pages load faster -->
