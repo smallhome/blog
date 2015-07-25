@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>small home - wxh</title>
+    <title>small home - android</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="wxh">
@@ -64,7 +64,7 @@
           <div class="nav-collapse">
             <ul class="nav">
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="http://localhost:8000/category/android.html">
 						<i class="icon-folder-open icon-large"></i>android
 					</a>
@@ -116,51 +116,6 @@
 <p>4.当系统卡死时通过烧写misc.img可以快速进入ftm并获取root权限(进入ftm模式时我们添加了root权限)</p>
 <p>扩展:我们可以将以上方法扩展开来,在第一个用户程序init中将cache分区挂载上,然后重定向标准输出,标准出错到 ...</p>
                         <a class="btn primary xsmall" href="http://localhost:8000/recoverydiao-shi-fang-fa.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        <div class="article">
-                <h1><a href="http://localhost:8000/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2015-07-22T00:00:00+08:00">
-        <i class="icon-calendar"></i>Wed 22 July 2015
-</abbr>
-<span class="label">By</span>
-<a href="http://localhost:8000/author/wxh.html"><i class="icon-user"></i>wxh</a>
-<span class="label">Category</span>
-<a href="http://localhost:8000/category/gentoo.html"><i class="icon-folder-open"></i>gentoo</a>.
-
-
-</footer><!-- /.post-info --></div>
-                <div class="summary"><h2>Github帐户相关</h2>
-<ul>
-<li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
-<li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
-<li>git config设置git用户,邮箱等信息</li>
-<li>如果git push依然不成功,可以使用http协议来clone代码和提交内容</li>
-<li>新建repositories,自动新建github pages,新建一个source branch,用来存储md文件</li>
-</ul>
-<h2>建立gentoo环境</h2>
-<ul>
-<li>emerge git,pelican,extext工具,解决依赖关系</li>
-<li>pelican-quickstart建立基本博客环境<blockquote>
-<p>myblog</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>├── content # 存放输入的源文件</p>
-<p>│ └── (pages) # 存放手工创建的静态页面</p>
-<p>├── output # 生成的输出文件</p>
-<p>├── develop_server.sh # 方便开启测试服务器</p>
-<p>├── Makefile # 方便管理博客的Makefile</p>
-<p>├── pelicanconf.py # 主配置文件</p>
-<p>└── publishconf.py # 发布时使用的配置文件</p>
-</blockquote>
-<ul>
-<li>使用extext写好的md文档放入content目录,执行make ...</li></ul>
-                        <a class="btn primary xsmall" href="http://localhost:8000/ru-he-da-jian-githubbo-ke.html">more ...</a>
                 </div>
         </div>
         <hr />

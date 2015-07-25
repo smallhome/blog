@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>small home - wxh</title>
+    <title>recovery调试方法</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="wxh">
@@ -64,7 +64,7 @@
           <div class="nav-collapse">
             <ul class="nav">
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="http://localhost:8000/category/android.html">
 						<i class="icon-folder-open icon-large"></i>android
 					</a>
@@ -89,9 +89,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-        <div class="article">
-                <h1><a href="http://localhost:8000/recoverydiao-shi-fang-fa.html">recovery调试方法</a></h1>
-                <div class="well small"><footer class="post-info">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to recovery调试方法">
+                                        recovery调试方法
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2015-07-25T00:00:00+08:00">
         <i class="icon-calendar"></i>Sat 25 July 2015
@@ -102,8 +113,8 @@
 <a href="http://localhost:8000/category/android.html"><i class="icon-folder-open"></i>android</a>.
 
 
-</footer><!-- /.post-info --></div>
-                <div class="summary"><h2>问题的来由</h2>
+</footer><!-- /.post-info -->                </div>
+                <h2>问题的来由</h2>
 <p>recovery里面调试不能进shell,抓取log只有当recovery执行完成退出时才能保存下来。我们现在要达到两个目标:</p>
 <p>1.即使recovery没有执行完成,依然可以保存下来log信息</p>
 <p>2.添加adb shell环境,方便使用android提供的一些调试工具</p>
@@ -114,57 +125,37 @@
 <p>2.在recovery里面,挂在文件系统是在程序执行过程中而不是在fstab中,所以重定向到cache中的文件前,先挂载cache分区</p>
 <p>3.通过freopen重定向时,mode参数传入"a",则将log加入到log文件末尾;如果传入"w",则将log清楚掉重新从文件头开始写入;</p>
 <p>4.当系统卡死时通过烧写misc.img可以快速进入ftm并获取root权限(进入ftm模式时我们添加了root权限)</p>
-<p>扩展:我们可以将以上方法扩展开来,在第一个用户程序init中将cache分区挂载上,然后重定向标准输出,标准出错到 ...</p>
-                        <a class="btn primary xsmall" href="http://localhost:8000/recoverydiao-shi-fang-fa.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        <div class="article">
-                <h1><a href="http://localhost:8000/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2015-07-22T00:00:00+08:00">
-        <i class="icon-calendar"></i>Wed 22 July 2015
-</abbr>
-<span class="label">By</span>
-<a href="http://localhost:8000/author/wxh.html"><i class="icon-user"></i>wxh</a>
-<span class="label">Category</span>
-<a href="http://localhost:8000/category/gentoo.html"><i class="icon-folder-open"></i>gentoo</a>.
-
-
-</footer><!-- /.post-info --></div>
-                <div class="summary"><h2>Github帐户相关</h2>
+<p>扩展:我们可以将以上方法扩展开来,在第一个用户程序init中将cache分区挂载上,然后重定向标准输出,标准出错到/cache/startup.log中,还可以根据</p>
+<p>ftm,recovery,charge下的不同属性,来作一些特殊的抓取log需求:抓取第一次刷完版本log,recovery升完级的log,第一次恢复出场设置log等</p>
+<h2>搭建adb shell环境</h2>
 <ul>
-<li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
-<li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
-<li>git config设置git用户,邮箱等信息</li>
-<li>如果git push依然不成功,可以使用http协议来clone代码和提交内容</li>
-<li>新建repositories,自动新建github pages,新建一个source branch,用来存储md文件</li>
+<li>添加adb shell功能</li>
 </ul>
-<h2>建立gentoo环境</h2>
+<p>1.挂在system分区</p>
+<p>2.设置PATH环境变量添加/system/bin和/system/xbin</p>
+<p>3.启动adbd,且设置为正常模式而不是recovery模式</p>
+<p>4.设置usb vid,pid,usb config等属性,并设置enable为1</p>
+<p>在恢复出场设置或者升级过程中和升级系统时,需要卸载掉system,否则将无法恢复出场设置或者升级;所以我们需要进一步提出另外的方案</p>
 <ul>
-<li>emerge git,pelican,extext工具,解决依赖关系</li>
-<li>pelican-quickstart建立基本博客环境<blockquote>
-<p>myblog</p>
-</blockquote>
-</li>
+<li>不改变分区方案的方法</li>
 </ul>
-<blockquote>
-<p>├── content # 存放输入的源文件</p>
-<p>│ └── (pages) # 存放手工创建的静态页面</p>
-<p>├── output # 生成的输出文件</p>
-<p>├── develop_server.sh # 方便开启测试服务器</p>
-<p>├── Makefile # 方便管理博客的Makefile</p>
-<p>├── pelicanconf.py # 主配置文件</p>
-<p>└── publishconf.py # 发布时使用的配置文件</p>
-</blockquote>
+<p>1.交叉编译busybox和sh,strace等工具,选择静态链接的方式编译,直接将需要的程序放在/sbin下;修改PATH路径</p>
+<p>2.修改adbd的service文件,将调用sh的路径指向/sbin/sh</p>
 <ul>
-<li>使用extext写好的md文档放入content目录,执行make ...</li></ul>
-                        <a class="btn primary xsmall" href="http://localhost:8000/ru-he-da-jian-githubbo-ke.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-
+<li>添加boot和recovery分区大小</li>
+</ul>
+<p>1.我们可以扩大root和recovery分区的大小,在其中建立system/bin和system/lib目录,然后将需要的lib和bin文件拷贝到对应文件夹下,其中linker和sh</p>
+<p>是必须包含的</p>
+<p>2.挂在system分区时,会将/system里面的内容覆盖掉;如果不将我们的环境放在/system目录,除了修改PATH变量和sh路径外,还需要修改linker动态库链接程</p>
+<p>序中动态库存放的目录</p>
+<h2>问题反馈之联系方式</h2>
+<ul>
+<li>邮件(wangxiaohua1990@hotmail.com)</li>
+<li>技术博客: smallhome.github.io/blog</li>
+</ul>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
