@@ -1,6 +1,6 @@
 Date: 2015-07-22
 Title: 如何搭建github博客
-Tags: 工具
+Category: gentoo
 
 ##Github帐户相关
 * 一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件
@@ -44,4 +44,4 @@ Tags: 工具
 
 ##问题反馈之联系方式
 * 邮件(wangxiaohua1990@hotmail.com)
-* weibo: http://wangxiaohua1990.github.io/wxh.github.com/
+* 博客: smallhome.github.io/blog
