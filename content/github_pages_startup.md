@@ -43,5 +43,5 @@ Category: gentoo
 
 
 ##问题反馈之联系方式
-* 邮件(wangxiaohua1990@hotmail.com)
+* 邮件(smallhome@hotmail.com)
 * 博客: smallhome.github.io/blog

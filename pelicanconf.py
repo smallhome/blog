@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'wxh'
+AUTHOR = u'smallhome'
 SITENAME = u'small home'
 SITEURL = 'http://smallhome.github.io/blog/'
 

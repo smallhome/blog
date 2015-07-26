@@ -57,5 +57,5 @@ ftm,recovery,charge下的不同属性,来作一些特殊的抓取log需求:抓�
 序中动态库存放的目录
 
 ##问题反馈之联系方式
-* 邮件(wangxiaohua1990@hotmail.com)
+* 邮件(smallhome2015@hotmail.com)
 * 技术博客: smallhome.github.io/blog
