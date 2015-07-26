@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>small home</title>
+    <title>Welcome to My Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="wxh">
+    <meta name="author" content="smallhome">
 
     <!-- Le styles -->
     <link rel="stylesheet" href="http://smallhome.github.io/blog/theme/css/bootstrap.dark.css" type="text/css" />
@@ -63,6 +63,7 @@
           <a class="brand" href="http://smallhome.github.io/blog/index.html">small home </a>
           <div class="nav-collapse">
             <ul class="nav">
+                <li><a href="http://smallhome.github.io/blog/">Welcome to My Site</a></li>
                           <li class="divider-vertical"></li>
                   <li >
                     <a href="http://smallhome.github.io/blog/category/android.html">
@@ -89,82 +90,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-        <div class="article">
-                <h1><a href="http://smallhome.github.io/blog/recoverydiao-shi-fang-fa.html">recovery调试方法</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2015-07-25T00:00:00+08:00">
-        <i class="icon-calendar"></i>Sat 25 July 2015
-</abbr>
-<span class="label">By</span>
-<a href="http://smallhome.github.io/blog/author/wxh.html"><i class="icon-user"></i>wxh</a>
-<span class="label">Category</span>
-<a href="http://smallhome.github.io/blog/category/android.html"><i class="icon-folder-open"></i>android</a>.
-
-
-</footer><!-- /.post-info --></div>
-                <div class="summary"><h2>问题的来由</h2>
-<p>recovery里面调试不能进shell,抓取log只有当recovery执行完成退出时才能保存下来。我们现在要达到两个目标:</p>
-<p>1.即使recovery没有执行完成,依然可以保存下来log信息</p>
-<p>2.添加adb shell环境,方便使用android提供的一些调试工具</p>
-<h2>修改log机制</h2>
-<p>recovery程序从boogloader/recovery下的程序生成的,在recovery的main函数里,将标准输出,标准出错输出通过freopen</p>
-<p>重定向到了/tmp/recovery.log,只有当程序执行结束时会将文件拷贝到cache分区</p>
-<p>1.修改标准输出,标准出错输出重定向到/cache/recovery.log文件;</p>
-<p>2.在recovery里面,挂在文件系统是在程序执行过程中而不是在fstab中,所以重定向到cache中的文件前,先挂载cache分区</p>
-<p>3.通过freopen重定向时,mode参数传入"a",则将log加入到log文件末尾;如果传入"w",则将log清楚掉重新从文件头开始写入;</p>
-<p>4.当系统卡死时通过烧写misc.img可以快速进入ftm并获取root权限(进入ftm模式时我们添加了root权限)</p>
-<p>扩展:我们可以将以上方法扩展开来,在第一个用户程序init中将cache分区挂载上,然后重定向标准输出,标准出错到 ...</p>
-                        <a class="btn primary xsmall" href="http://smallhome.github.io/blog/recoverydiao-shi-fang-fa.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        <div class="article">
-                <h1><a href="http://smallhome.github.io/blog/ru-he-da-jian-githubbo-ke.html">如何搭建github博客</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2015-07-22T00:00:00+08:00">
-        <i class="icon-calendar"></i>Wed 22 July 2015
-</abbr>
-<span class="label">By</span>
-<a href="http://smallhome.github.io/blog/author/wxh.html"><i class="icon-user"></i>wxh</a>
-<span class="label">Category</span>
-<a href="http://smallhome.github.io/blog/category/gentoo.html"><i class="icon-folder-open"></i>gentoo</a>.
-
-
-</footer><!-- /.post-info --></div>
-                <div class="summary"><h2>Github帐户相关</h2>
-<ul>
-<li>一定要作邮箱验证,否则github pages无法访问;且不能使用163之类的邮箱,我注册了hotmail邮箱才收到验证邮件</li>
-<li>git访问要通过ssh验证,通过ssh-keygen产生PC上的ssh keys,然后添加到github的ssh keys栏中即可</li>
-<li>git config设置git用户,邮箱等信息</li>
-<li>如果git push依然不成功,可以使用http协议来clone代码和提交内容</li>
-<li>新建repositories,自动新建github pages,新建一个source branch,用来存储md文件</li>
-</ul>
-<h2>建立gentoo环境</h2>
-<ul>
-<li>emerge git,pelican,extext工具,解决依赖关系</li>
-<li>pelican-quickstart建立基本博客环境<blockquote>
-<p>myblog</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>├── content # 存放输入的源文件</p>
-<p>│ └── (pages) # 存放手工创建的静态页面</p>
-<p>├── output # 生成的输出文件</p>
-<p>├── develop_server.sh # 方便开启测试服务器</p>
-<p>├── Makefile # 方便管理博客的Makefile</p>
-<p>├── pelicanconf.py # 主配置文件</p>
-<p>└── publishconf.py # 发布时使用的配置文件</p>
-</blockquote>
-<ul>
-<li>使用extext写好的md文档放入content目录,执行make ...</li></ul>
-                        <a class="btn primary xsmall" href="http://smallhome.github.io/blog/ru-he-da-jian-githubbo-ke.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-
+<section id="content" class="body">
+        <h1 class="entry-title">Welcome to My Site</h1>
+        <p>Thank you for visiting. Welcome!</p>
+</section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
